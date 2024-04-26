@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDrop, useDrag, DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { ItemTypes } from "./Constants";
+// import { ItemTypes } from "./Constants";
 
 const tiers = ["S", "A", "B", "C", "D", "F"];
 
@@ -27,7 +27,7 @@ const DragAndDropPage = () => {
 
   const Card = ({ id, name, tier }) => {
     const [{ isDragging }, drag] = useDrag({
-      type: ItemTypes.CARD, // Add the type property
+      type: "CARD", // Add the type property
       item: { id, type: "CARD" }, // Define the type property
       collect: (monitor) => ({
         isDragging: !!monitor.isDragging(),
